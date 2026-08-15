@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - HGE</title>
+    <link rel="icon" href="assets_hge/hge.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Sobre.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="menu"> 
+            <a href="index.html">Início</a>
+            <a href="sistemas_hge.html">Sistemas</a>
+            <a href="Manuais.html">Manuais</a>
+            <a href="cursos_hge.html">Cursos</a>
+            <a href="contatos_hge.html">Contatos</a>
+            <a class="ativo" href="sobre_hge.html">Sobre</a>
+        </nav>
+    </header>
+
+    <main class="sobre__hge">
+        <p class="texto__principal">O Hospital Geral do Estado Professor Osvaldo Brandão Vilela (HGE) está localizado no bairro Trapiche da Barra, Maceió. 
+            Foi inaugurado em 16 de setembro de 2008 como parte do Programa QualiSUS, resultado de um convênio entre o Ministério 
+            da Saúde e o Governo do Estado de Alagoas. O HGE tem como missão prestar assistência a saúde da população alagoana, como hospital do SUS referência em urgência
+            e emergência, ensino e pesquisa, com valores de ética, qualidade, humanização e sustentabilidade.</p>
+
+        <h2 class="texto__destaque">Possui um total de 357 leitos</h2>
+        <div class="destaque">
+             <p class="texto__principal">&bull; 27 leitos de UTI adulto</p>
+             <p class="texto__principal">&bull; 20 leitos de UTI pediátrica</p>
+             <p class="texto__principal">&bull; 15 leitos de UAVC</p>
+        </div>
+
+        <h2 class="texto__destaque">Especialidades Médicas:</h2>
+        <p class="texto__principal">Buco-maxilo, Cardiologia, Clinical Geral, Pediatria, Nefrologia, Nefropediatra, Neurologia, Neuropediatra, 
+            Oftalmologia, Otorrinolaringologia, Vascular, Ortopedia, Urologia, Hematologia, Oncologia, Anatomo-patologia, Anestesia, Cirurgia Geral,
+            Cirurgia Pediátrica, Cirurgia Plástica, Cirurgia Torácica, Cirurgia Vascular, Neurocirurgia, Ecocardiografista, Endoscopia, 
+            Terapia Intensiva, Radiologista e Ultrassonografista.
+        </p>
+
+        <h2 class="texto__destaque">Exames e Cirurgias:</h2>
+        <p class="texto__principal">O HGE realiza diversos exames complementares, como: Radiografia, Tomografia, Ultrassonografia, Endoscopia, Ecocardiograma, 
+            Eletrocardiograma, Ultrassonografia com doppler, Cateterismo e Angiotomografia e Laboratoriais. Além de cirurgias nas especialidades: Buco-maxilo, 
+            Cardíaca, Geral, Neurológica, Oftalmológica, Otorrinolaringológica, Pediátrica, Plástica, Toráxia, Traumato ortopédica, Urológica e Vascular.</p>
+
+        <h2 class="texto__destaque">Modo de Acesso à Unidade:</h2>
+        <div class="destaque">
+            <p> Porta Aberta – Demanda Espontânea</p>
+            <p class="texto__principal">&bull; Vermelha trauma, Vermelha clínica e Pediatria</p>
+        </div>
+        
+        <div class="destaque">
+            <p> Porta Referenciada – Demanda Via Regulação</p>
+            <p class="texto__principal">&bull; Urgência (Área azul)</p>
+        </div>
+
+        <h2 class="texto__funcionamento">Horário de Funcionamento: Todos os dias da semana – 24 horas por dia.</h2>
+        
+        <ul class="texto__inforrodape">
+            <li><strong>Gestão:</strong> Fernando Fortes Melro Filho</li>
+            <li><strong>Endereço:</strong> Avenida Siqueira Campos, 2095, Trapiche da Barra, Maceió-AL</li>
+            <li><strong>Telefone:</strong> (82) 3315-3281 / 3277</li>
+        </ul>
+    </main>
+
+    <footer class="rodape">
+        <p>Desenvolvido por CTECI / NPD</p>
+    </footer>
+
+    <script>
+        // Monitoramento da rolagem global do navegador para ocultar/exibir o rodapé
+        const rodape = document.querySelector('.rodape');
+        let ultimoScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            let scrollAtual = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollAtual > ultimoScroll && scrollAtual > 20) {
+                // Rolou para baixo -> Esconde o rodapé
+                rodape.classList.add('rodape-oculto');
+            } else {
+                // Rolou para cima -> Mostra o rodapé
+                rodape.classList.remove('rodape-oculto');
+            }
+            
+            ultimoScroll = scrollAtual;
+        });
+    </script>
+</body>
+</html>

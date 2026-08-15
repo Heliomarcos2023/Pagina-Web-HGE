@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari&display=swap');
+
+:root {
+    --cor-primaria: rgba(0, 0, 0, 0.9);
+    --cor-menubar: #4FC3F7;
+    --cor-texto: #F5F7FA;
+}
+
+/* Aplicando o scroll no HTML para garantir que fique atrás dos elementos fixos */
+html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+/* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM GLOBAL ATRÁS DO LAYOUT --- */
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+html::-webkit-scrollbar-thumb {
+    background: transparent; /* Oculta por padrão */
+    border-radius: 2px;
+    transition: background 0.3s ease; 
+}
+
+/* Quando o mouse passa na tela, ela aparece respeitando o z-index inferior */
+html:hover::-webkit-scrollbar-thumb {
+    background: var(--cor-menubar); 
+}
+
+html:hover::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05); 
+}
+
+/* Fundo */
+.fundo {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-image: url('/assets_hge/foto_hge04.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--cor-primaria);
+}
+
+/* Cabeçalho - Z-INDEX ALTO para cobrir a barra de rolagem */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    backdrop-filter: blur(12px);
+    background: rgba(30, 40, 50, 0.55);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    z-index: 9999; /* Fica por cima do scroll */
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.menu a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: var(--cor-menubar);
+    transform: translateY(-2px);
+}
+
+.menu .ativo {
+    border-bottom: 3px solid var(--cor-menubar);
+}
+
+/* Título */
+.titulo {
+    text-align: center;
+    margin-top: 120px; /* Ajustado para dar o mesmo espaçamento de contatos */
+}
+
+.titulo h1 {
+    font-size: 2.0rem;
+}
+
+.titulo p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Grid - Atualizado para rolar junto com a página globalmente */
+.grid {
+    width: 100%; 
+    margin: 20px 0 140px 0; /* Espaço inferior de folga para o rodapé fixo */
+    padding: 0 8%; 
+    box-sizing: border-box; 
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+}
+
+/* Cards */
+.card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 5px;
+    transition: .3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.25);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Rodapé - Z-INDEX ALTO para cobrir a barra de rolagem */
+.rodape {
+    color: #FFFFFF;
+    text-align: center;
+    padding: 15px 0;
+    background: rgba(30, 40, 50, 0.85);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Fica por cima do scroll */
+
+    /* Animação para ocultar */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* nome do rodape */
+.rodape p {
+      color: #FFFFFF;
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.9;
+}
+
+
+/* Classe aplicada via JavaScript ao rolar */
+.rodape-oculto {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none; 
+}

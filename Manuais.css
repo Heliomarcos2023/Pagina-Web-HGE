@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari&display=swap');
+
+:root {
+    --cor-primaria: rgba(0, 0, 0, 0.9);
+    --cor-menubar: #4FC3F7;
+    --cor-texto: #F5F7FA;
+}
+
+/* Aplicando o scroll no HTML para garantir que fique atrás dos elementos fixos */
+html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+/* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM GLOBAL ATRÁS DO LAYOUT --- */
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+html::-webkit-scrollbar-thumb {
+    background: transparent; /* Oculta por padrão */
+    border-radius: 2px;
+    transition: background 0.3s ease; 
+}
+
+/* Quando o mouse passa na tela, ela aparece respeitando o z-index inferior */
+html:hover::-webkit-scrollbar-thumb {
+    background: var(--cor-menubar); 
+}
+
+html:hover::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05); 
+}
+
+/* Fundo */
+.fundo {
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('/assets_hge/foto_hge04.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--cor-primaria);
+    /* Removido o overflow: hidden antigo para liberar a rolagem global */
+}
+
+/* Cabeçalho - Z-INDEX ALTO para cobrir a barra de rolagem */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    backdrop-filter: blur(12px);
+    background: rgba(30, 40, 50, 0.55);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    z-index: 9999; /* Fica por cima do scroll */
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.menu a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: var(--cor-menubar);
+    transform: translateY(-2px);
+}
+
+.menu .ativo {
+    border-bottom: 3px solid var(--cor-menubar);
+}
+
+/* Título */
+.titulo {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.titulo h1 {
+    font-size: 2.5rem;
+}
+
+.titulo p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Grid Ajustado */
+.grid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto 140px auto; /* Ajustada a margem inferior para dar folga do rodapé fixo */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 35px;
+    justify-content: center;
+}
+
+/* Cards Ajustados */
+.card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    padding: 5px;
+    transition: .3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 240px; 
+    width: 100%;
+    margin: 0 auto; 
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.25);
+}
+
+/* Ajuste para as imagens não cortarem */
+.card img {
+    width: 100%;
+    height: auto; 
+    display: block;
+    border-radius: 10px; 
+    object-fit: contain; 
+}
+
+/* ==========================================
+   ESTILOS ADICIONAIS PARA AS ABAS E TUTORIAIS
+   ========================================== */
+
+/* Container dos botões */
+.abas-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 30px;
+}
+
+/* Estilo geral dos botões */
+.btn-aba {
+    background: rgba(211, 204, 204, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--cor-primaria);
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover nos botões */
+.btn-aba:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Botão da aba que está selecionada */
+.btn-aba.ativa {
+    background: var(--cor-menubar);
+    color: #1E2832; 
+    font-weight: bold;
+    border-color: var(--cor-menubar);
+    box-shadow: 0 4px 15px rgba(79, 195, 247, 0.4);
+}
+
+/* Controle de exibição das abas */
+.secao-aba {
+    display: none !important; 
+}
+
+.secao-aba.ativa {
+    display: grid !important; 
+}
+
+/* Efeito visual especial para identificar que é um vídeo */
+.play-overlay {
+    background: rgba(0, 0, 0, 0.2);
+    color: #FFF;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 8px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.card:hover .play-overlay {
+    background: var(--cor-menubar);
+    color: #1E2832;
+    opacity: 1;
+}
+
+/* Rodapé - Z-INDEX ALTO para cobrir a barra de rolagem */
+.rodape {
+    color: #FFFFFF;
+    text-align: center;
+    padding: 15px 0;
+    background: rgba(30, 40, 50, 0.85);
+    border-top: 1px solid rgba(255,255,255,0.85);
+    
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Fica por cima do scroll */
+
+    /* Configurações de transição para ocultar */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* nome do rodape */
+.rodape p {
+      color: #FFFFFF;
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.9;
+}
+
+
+/* Classe aplicada via JavaScript ao rolar */
+.rodape-oculto {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none; 
+}

@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari&display=swap');
+
+:root {
+    --cor-primaria: rgba(53, 75, 93, 0.9);
+    --cor-segudaria: #ffffff;
+    --cor-terciaria: rgb(35, 172, 165);
+    --cor-menubar: rgba(101, 221, 255, 0.9);
+}
+
+/* Aplicando o scroll no HTML para garantir que fique atrás dos elementos fixos */
+html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+/* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM GLOBAL ATRÁS DO LAYOUT --- */
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+html::-webkit-scrollbar-thumb {
+    background: transparent; /* Oculta por padrão */
+    border-radius: 2px;
+    transition: background 0.3s ease; 
+}
+
+/* Quando o mouse passa na tela, ela aparece respeitando o z-index inferior */
+html:hover::-webkit-scrollbar-thumb {
+    background: var(--cor-primaria); 
+}
+
+html:hover::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05); 
+}
+
+.barra__rolagem {
+  min-height: 100vh;
+  margin: 0;
+  background-image: url('/assets_hge/foto_hge04.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: var(--cor-segudaria);
+}
+
+/* Cabeçalho - Z-INDEX ALTO para cobrir a barra de rolagem */
+.cabecalho {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 0;
+  backdrop-filter: blur(12px);
+  background: rgba(30, 40, 50, 0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 9999; /* Fica por cima do scroll */
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.menu a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: .3s;
+}
+
+.menu a:hover {
+  color: var(--cor-menubar);
+  transform: translateY(-2px);
+}
+
+.menu .ativo {
+  border-bottom: 3px solid var(--cor-menubar);
+}
+
+/* Rodapé - Z-INDEX ALTO para cobrir a barra de rolagem */
+.rodape {
+  text-align: center;
+  padding: 15px 0;
+  background: rgba(30, 40, 50, 0.85);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999; /* Fica por cima do scroll */
+
+  /* Configurações de transição para ocultar */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* nome do rodape */
+.rodape p {
+      color: #FFFFFF;
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.9;
+}
+
+/* Classe aplicada via JavaScript ao rolar */
+.rodape-oculto {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none; 
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO DO SLIDESHOW
+   ========================================================================== */
+.slideshow-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 80vh;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slide.show {
+    display: block;
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.bar {
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.bar:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.2);
+}
+
+.navigation .bar.active {
+    background-color: var(--cor-menubar);
+    border-color: var(--cor-menubar);
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media(max-width: 1300px) {
+    .slideshow-container {
+        width: 75%;
+        height: 55vh;
+    }
+}
+
+@media(max-width: 800px) {
+    .cabecalho__menu {
+        margin: auto;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+    .cabecalho {
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+    .cabecalho__menu__link1, .cabecalho__menu__link2, .cabecalho__menu__link3, .cabecalho__menu__link4 {
+        font-size: 1.2rem;
+    }
+
+
+    .slideshow-container {
+        width: 90%;
+        height: 45vh;
+        top: 52%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

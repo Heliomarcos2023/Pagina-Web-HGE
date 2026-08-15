@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Geral do Estado</title>
+    <link rel="icon" href="assets_hge/hge.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body class="barra__rolagem">
+    <header class="cabecalho">
+        <nav class="menu">
+            <a class="ativo" href="index.html">Início</a>
+            <a href="sistemas_hge.html">Sistemas</a>
+            <a href="Manuais.html">Manuais</a>
+            <a href="cursos_hge.html">Cursos</a>
+            <a href="contatos_hge.html">Contatos</a>
+            <a href="sobre_hge.html">Sobre</a>
+        </nav>
+    </header>
+    
+    <main class="main">
+        <div class="slideshow-container">
+            <div class="slides">
+                <div class="slide">
+                    <img src="assets_hge/zap_npd.jpg" alt="imagem01">
+                </div>
+                <div class="slide">
+                    <img src="assets_hge/cursos.jpg" alt="imagem04">
+                </div>
+                <div class="slide">
+                    <img src="assets_hge/img05.jpg" alt="imagem05">
+                </div>
+
+                <div class="navigation">
+                    <span class="bar" onclick="currentSlide(1)"></span>
+                    <span class="bar" onclick="currentSlide(2)"></span>
+                    <span class="bar" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>Desenvolvido por CTECI / NPD</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        let timeout;
+        
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            let labels = document.querySelectorAll(".navigation .bar");
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (let i = 0; i < labels.length; i++) {
+                labels[i].classList.remove("active");
+            }
+            
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }    
+            
+            slides[slideIndex-1].style.display = "block";  
+            labels[slideIndex-1].classList.add("active");
+            
+            // Transição automática a cada 6 segundos
+            timeout = setTimeout(showSlides, 6000); 
+        }
+        
+        function currentSlide(n) {
+            clearTimeout(timeout);
+            slideIndex = n - 1;
+            showSlides();
+        }
+        
+        // Inicializa o carrossel de propagandas
+        showSlides();
+
+        // Monitoramento da rolagem global do navegador para ocultar/exibir o rodapé
+        const rodape = document.querySelector('.rodape');
+        let ultimoScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            let scrollAtual = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollAtual > ultimoScroll && scrollAtual > 20) {
+                // Rolou para baixo -> Esconde o rodapé
+                rodape.classList.add('rodape-oculto');
+            } else {
+                // Rolou para cima -> Mostra o rodapé
+                rodape.classList.remove('rodape-oculto');
+            }
+            
+            ultimoScroll = scrollAtual;
+        });
+    </script>
+</body>
+</html>

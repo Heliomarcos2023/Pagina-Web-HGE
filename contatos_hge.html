@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos - HGE</title>
+    <link rel="icon" href="assets_hge/hge.ico" type="image/x-icon">
+    <link rel="stylesheet" href="contatos.css">
+</head>
+<body class="fundo">
+
+    <header class="cabecalho">
+        <nav class="menu"> 
+            <a href="index.html">Início</a>
+            <a href="sistemas_hge.html">Sistemas</a>
+            <a href="Manuais.html">Manuais</a>
+            <a href="cursos_hge.html">Cursos</a>
+            <a class="ativo" href="contatos_hge.html">Contatos</a>
+            <a href="sobre_hge.html">Sobre</a>
+        </nav>
+    </header>
+  
+    <main class="main_contatos">
+        <div class="titulo">
+            <h1>Contatos HGE</h1>
+            <p>Lista de ramais e setores do hospital</p>
+        </div>
+
+        <div class="busca">
+            <input type="text" id="searchInput" onkeyup="filterTables()" placeholder="Buscar por setor ou telefone...">
+        </div>
+
+        <div class="tabela-container">
+            <h2 class="titulo__tabela">Setores Urgência e Emergência</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Setor</th>
+                        <th>Telefone</th>
+                        <th>Setor</th>
+                        <th>Telefone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Setor">Ala - A</td>
+                        <td data-label="Telefone">(82) 3315-7426</td>
+                        <td data-label="Setor">Centro Cirúrgico</td>
+                        <td data-label="Telefone">(82) 3315-7358</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Ala - B</td>
+                        <td data-label="Telefone">(82) 3315-7357</td>
+                        <td data-label="Setor">Classificação de Risco</td>
+                        <td data-label="Telefone">(82) 3315-7444</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Ala - C</td>
+                        <td data-label="Telefone">(82) 3315-7379</td>
+                        <td data-label="Setor">C.T.Q</td>
+                        <td data-label="Telefone">(82) 3315-7380</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Ala - D</td>
+                        <td data-label="Telefone">(82) 3315-7448</td>
+                        <td data-label="Setor">Endovascular</td>
+                        <td data-label="Telefone">(82) 3315-1830</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Ala - E</td>
+                        <td data-label="Telefone">(82) 3315-7384</td>
+                        <td data-label="Setor">Hemodinâmica</td>
+                        <td data-label="Telefone">(82) 3315-1495</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Ala - F</td>
+                        <td data-label="Telefone">(82) 3315-7433</td>
+                        <td data-label="Setor">Pediatria 2º Andar</td>
+                        <td data-label="Telefone">(82) 3315-7424</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Ala - G</td>
+                        <td data-label="Telefone">(82) 3315-5128</td>
+                        <td data-label="Setor">UTI Geral</td>
+                        <td data-label="Telefone">(82) 3315-7372</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Área Amarela</td>
+                        <td data-label="Telefone">(82) 3315-7425</td>
+                        <td data-label="Setor">UTI Geral 2</td>
+                        <td data-label="Telefone">(82) 3315-7399</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Área Azul</td>
+                        <td data-label="Telefone">(82) 3315-7389</td>
+                        <td data-label="Setor">UDT</td>
+                        <td data-label="Telefone">(82) 3315-2855</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Área Vermelha-Clínica</td>
+                        <td data-label="Telefone">(82) 3315-7382</td>
+                        <td data-label="Setor">Unidade de AVC</td>
+                        <td data-label="Telefone">(82) 3315-1303</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Área Vermelha-Trauma</td>
+                        <td data-label="Telefone">(82) 3315-7381</td>
+                        <td data-label="Setor">Ultrassom</td>
+                        <td data-label="Telefone">(82) 3315-7420</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Centro Cirúrgico 1º</td>
+                        <td data-label="Telefone">(82) 3315-1816</td>
+                        <td data-label="Setor">UTI Pediátrica</td>
+                        <td data-label="Telefone">(82) 3315-7416</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br><br>
+
+            <h2 class="titulo__tabela">Setores Administrativos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Setor</th>
+                        <th>Telefone</th>
+                        <th>Setor</th>
+                        <th>Telefone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Setor">Agência Transfusional</td>
+                        <td data-label="Telefone">(82) 3315-7428</td>
+                        <td data-label="Setor">Nutrição Clínica 2º Andar</td>
+                        <td data-label="Telefone">(82) 3315-7438</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Apoio Técnico</td>
+                        <td data-label="Telefone">(82) 3315-7409</td>
+                        <td data-label="Setor">Nutrição Coordenação</td>
+                        <td data-label="Telefone">(82) 3315-7414</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Ascom</td>
+                        <td data-label="Telefone">(82) 3315-3280</td>
+                        <td data-label="Setor">Nutrição Enteral</td>
+                        <td data-label="Telefone">(82) 3315-6156</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Central de Óbitos</td>
+                        <td data-label="Telefone">(82) 3315-7398</td>
+                        <td data-label="Setor">Nutrição Produção</td>
+                        <td data-label="Telefone">(82) 3315-7025</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Central de Regulação</td>
+                        <td data-label="Telefone">(82) 3597-9100</td>
+                        <td data-label="Setor">Ouvidoria</td>
+                        <td data-label="Telefone">(82) 3315-7428</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Central de Transplante</td>
+                        <td data-label="Telefone">(82) 3315-7440</td>
+                        <td data-label="Setor">Patrimônio</td>
+                        <td data-label="Telefone">(82) 3315-7419</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Central de Transplante</td>
+                        <td data-label="Telefone">(82) 3376-8486</td>
+                        <td data-label="Setor">Pertence</td>
+                        <td data-label="Telefone">(82) 3315-7371</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Central Telefônica</td>
+                        <td data-label="Telefone">(82) 3315-7400</td>
+                        <td data-label="Setor">Planejamento</td>
+                        <td data-label="Telefone">(82) 3315-7400</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Central Telefônica</td>
+                        <td data-label="Telefone">(82) 3315-3293</td>
+                        <td data-label="Setor">Polícia - Posto HGE</td>
+                        <td data-label="Telefone">(82) 3315-7351</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Centro de Estudos</td>
+                        <td data-label="Telefone">(82) 3315-7366</td>
+                        <td data-label="Setor">Ponto</td>
+                        <td data-label="Telefone">(82) 3315-7024</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Contas Médicas</td>
+                        <td data-label="Telefone">(82) 3315-7396</td>
+                        <td data-label="Setor">Psicologia Térreo</td>
+                        <td data-label="Telefone">(82) 3315-1368</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Coord. de Enfermagem</td>
+                        <td data-label="Telefone">(82) 3315-7362</td>
+                        <td data-label="Setor">Psicologia 2º Andar</td>
+                        <td data-label="Telefone">(82) 3315-7348</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Farma. Centro Cirúrgico</td>
+                        <td data-label="Telefone">(82) 3315-7431</td>
+                        <td data-label="Setor">UTI Pediátrica</td>
+                        <td data-label="Telefone">(82) 3315-7416</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Coord. Tomografia</td>
+                        <td data-label="Telefone">(82) 3315-1903</td>
+                        <td data-label="Setor">Q.V.T</td>
+                        <td data-label="Telefone">(82) 3315-7408</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">CTECI / NPD</td>
+                        <td data-label="Telefone">(82) 3315-7413 / 9411-8944</td>
+                        <td data-label="Setor">Recepção Entrada</td>
+                        <td data-label="Telefone">(82) 3315-7383</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Diluição</td>
+                        <td data-label="Telefone">(82) 3315-7385</td>
+                        <td data-label="Setor">Registro Térreo</td>
+                        <td data-label="Telefone">(82) 3315-7354</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Direção Administrativa</td>
+                        <td data-label="Telefone">(82) 3315-7411</td>
+                        <td data-label="Setor">Registro Pediatria</td>
+                        <td data-label="Telefone">(82) 3315-6158</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Direção Geral</td>
+                        <td data-label="Telefone">(82) 3315-3277</td>
+                        <td data-label="Setor">RH - Desenvolvimento</td>
+                        <td data-label="Telefone">(82) 3315-7350</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Direção Assessorias</td>
+                        <td data-label="Telefone">(82) 3315-3286</td>
+                        <td data-label="Setor">RH - Coordenação</td>
+                        <td data-label="Telefone">(82) 3315-3291</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Engenharia</td>
+                        <td data-label="Telefone">(82) 3315-7363</td>
+                        <td data-label="Setor">Rouparia</td>
+                        <td data-label="Telefone">(82) 3315-7386</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Esterilização</td>
+                        <td data-label="Telefone">(82) 3315-7391</td>
+                        <td data-label="Setor">Raio-X Coordenação</td>
+                        <td data-label="Telefone">(82) 3315-7012</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Farmácia Coordenação</td>
+                        <td data-label="Telefone">(82) 3315-3288</td>
+                        <td data-label="Setor">SAME</td>
+                        <td data-label="Telefone">(82) 3315-7369</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Farmácia 2º Andar</td>
+                        <td data-label="Telefone">(82) 3315-3367</td>
+                        <td data-label="Setor">SCIH (CCIH)</td>
+                        <td data-label="Telefone">(82) 3315-7395</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Farmácia Área Verde</td>
+                        <td data-label="Telefone">(82) 3315-7373</td>
+                        <td data-label="Setor">Secretaria Hospitalar</td>
+                        <td data-label="Telefone">(82) 3315-7364</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Farmácia Área Azul</td>
+                        <td data-label="Telefone">(82) 3315-7360</td>
+                        <td data-label="Setor">Serviço Social 1º Andar</td>
+                        <td data-label="Telefone">(82) 3315-7397</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Farma. Centro Cirúrgico</td>
+                        <td data-label="Telefone">(82) 3315-7431</td>
+                        <td data-label="Setor">Serviço Social 2º Andar</td>
+                        <td data-label="Telefone">(82) 3315-4956</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Financeiro</td>
+                        <td data-label="Telefone">(82) 3315-3290</td>
+                        <td data-label="Setor">Serviço Social Coordenação</td>
+                        <td data-label="Telefone">(82) 3315-4936</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Higienização</td>
+                        <td data-label="Telefone">(82) 3315-7457</td>
+                        <td data-label="Setor">Setor Pessoal</td>
+                        <td data-label="Telefone">(82) 3315-7392</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Hotelaria</td>
+                        <td data-label="Telefone">(82) 3315-7387</td>
+                        <td data-label="Setor">Supervisão</td>
+                        <td data-label="Telefone">(82) 3315-7439</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Informação</td>
+                        <td data-label="Telefone">(82) 3315-7352</td>
+                        <td data-label="Setor">Suprimentos</td>
+                        <td data-label="Telefone">(82) 3315-3283</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Laboratório-HGE</td>
+                        <td data-label="Telefone">(82) 3315-1910</td>
+                        <td data-label="Setor">Tomografia</td>
+                        <td data-label="Telefone">(82) 3315-7390</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Manutenção</td>
+                        <td data-label="Telefone">(82) 3315-7399</td>
+                        <td data-label="Setor">Transporte</td>
+                        <td data-label="Telefone">(82) 3315-5746</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Manutenção Elétrica</td>
+                        <td data-label="Telefone">(82) 3315-7422</td>
+                        <td data-label="Setor">Vigilância Epidemiológica</td>
+                        <td data-label="Telefone">(82) 3315-4990</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">N.I.R</td>
+                        <td data-label="Telefone">(82) 3315-5032</td>
+                        <td data-label="Setor">Coordenação Psicologia</td>
+                        <td data-label="Telefone">(82) 3315-7019</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Setor">Neurologia</td>
+                        <td data-label="Telefone">(82) 3315-1303</td>
+                        <td data-label="Setor">Coord. Serviço Social</td>
+                        <td data-label="Telefone">(82) 3315-4936</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>Desenvolvido por CTECI / NPD</p>
+    </footer>
+ 
+    <script>
+        function filterTables() {
+            var input, filter, tables, tr, td, i, j, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            tables = document.getElementsByTagName("table");
+
+            for (j = 0; j < tables.length; j++) {
+                tr = tables[j].getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    if (tr[i].getElementsByTagName("th").length > 0) {
+                        continue;
+                    }
+                    var found = false;
+                    td = tr[i].getElementsByTagName("td");
+                    for (var k = 0; k < td.length; k++) {
+                        txtValue = td[k].textContent || td[k].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (found) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        // Monitoramento do scroll global na janela
+        const rodape = document.querySelector('.rodape');
+        let ultimoScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            let scrollAtual = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollAtual > ultimoScroll && scrollAtual > 20) {
+                // Rolou para baixo -> Esconde o rodapé
+                rodape.classList.add('rodape-oculto');
+            } else {
+                // Rolou para cima -> Mostra o rodapé
+                rodape.classList.remove('rodape-oculto');
+            }
+            
+            ultimoScroll = scrollAtual;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuais e Tutoriais - HGE</title>
+    <link rel="icon" href="assets_hge/hge.ico" type="image/x-icon">
+    <link rel="stylesheet" href="manuais.css">
+</head>
+
+<body class="fundo">
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="sistemas_hge.html">Sistemas</a>
+            <a class="ativo" href="Manuais.html">Manuais</a>
+            <a href="cursos_hge.html">Cursos</a>
+            <a href="contatos_hge.html">Contatos</a>
+            <a href="sobre_hge.html">Sobre</a>
+        </nav>
+    </header>
+
+    <!-- TÍTULO -->
+    <section class="titulo">
+        <h1>Central de Ajuda</h1>
+        <p>Selecione uma categoria abaixo para acessar o conteúdo de suporte</p>
+    </section>
+
+    <!-- BOTÕES DE SELEÇÃO (ABAS) -->
+    <div class="abas-container">
+        <button class="btn-aba ativa" onclick="alternarAba('manuais')">Manuais em PDF</button>
+        <button class="btn-aba" onclick="alternarAba('videos')">Vídeos Tutoriais</button>
+    </div>
+
+    <!-- CONTEÚDO 1: GRID DE MANUAIS EM PDF -->
+    <section id="aba-manuais" class="grid secao-aba ativa">
+
+        <div class="card">
+            <a href="./manuais/_EBOOK GESTHOSP WEB - MÓDULO MAQUEIROS.pdf" target="_blank">
+                <img src="./assets_hge/manual_maq.png" alt="Manual Maqueiros">
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="./manuais/eBOOK GESTHOSP FARMÁCIA.pdf" target="_blank">
+                <img src="./assets_hge/manual_farm.png" alt="Manual Farmácia">
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="./manuais/_EBOOK GESTHOSP 2.0 - VISITANTES E ACOMPANHANTES (RECEPÇÃO).pdf" target="_blank">
+                <img src="./assets_hge/manu_visitas.png" alt="Manual Visitantes">
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="/manuais/MAPA DE ENFERMAGEM (VISÃO ENFERMEIRO).pdf" target="_blank">
+                <img src="./assets_hge/manu_enfer.png" alt="Manual Enfermagem">
+            </a>
+        </div>
+
+    </section>
+
+    <!-- CONTEÚDO 2: GRID DE VÍDEOS TUTORIAIS -->
+    <section id="aba-videos" class="grid secao-aba">
+
+        <!-- Exemplo de Card de Vídeo -->
+        <div class="card">
+            <a href="/manuais/incluir_pacientes.mp4" target="_blank">
+                <img src="./assets_hge/incluir.png" alt="Tutorial Maqueiros em Vídeo">
+            </a>
+        </div>
+
+        <!-- Outro exemplo de Card de Vídeo -->
+        <div class="card">
+            <a href="/manuais/especialidade.mp4" target="_blank">
+                <img src="./assets_hge/especialidade.png" alt="Tutorial Farmácia em Vídeo">
+            </a>
+        </div>
+
+            <!-- Outro exemplo de Card de Vídeo -->
+        <div class="card">
+            <a href="/manuais/finalizar mapa.mp4" target="_blank">
+                <img src="./assets_hge/finalização.png" alt="Tutorial Farmácia em Vídeo">
+            </a>
+        </div>
+
+         <!-- Exemplo de Card de Vídeo -->
+        <div class="card">
+            <a href="/manuais/MAPA DE ENFERMAGEM - COMO SOLICITAR LEITO AO NIR.mp4" target="_blank">
+                <img src="./assets_hge/solicitar regulação.png" alt="Tutorial Maqueiros em Vídeo">
+            </a>
+        </div>
+
+         <!-- Outro exemplo de Card de Vídeo -->
+        <div class="card">
+            <a href="/manuais/MAPA DE ENFERMAGEM - ACEITAR SOLICITAÇÃO.mp4" target="_blank">
+                <img src="./assets_hge/aceita_nir.png" alt="Tutorial Farmácia em Vídeo">
+            </a>
+        </div>
+
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <p>Desenvolvido por CTECI / NPD</p>
+    </footer>
+
+    <!-- JAVASCRIPT ATUALIZADO PARA ALTERNAR AS ABAS E MONITORAR O SCROLL GLOBAL -->
+    <script>
+        function alternarAba(abaNome) {
+            // Remove a classe ativa de todos os botões
+            document.querySelectorAll('.btn-aba').forEach(btn => {
+                btn.classList.remove('ativa');
+            });
+            
+            // Remove a classe ativa de todas as seções (grids)
+            document.querySelectorAll('.secao-aba').forEach(secao => {
+                secao.classList.remove('ativa');
+            });
+
+            // Adiciona a classe ativa ao botão clicado
+            event.currentTarget.classList.add('ativa');
+
+            // Mostra a seção correspondente
+            document.getElementById('aba-' + abaNome).classList.add('ativa');
+        }
+
+        // Monitoramento da rolagem global do navegador para ocultar/exibir o rodapé
+        const rodape = document.querySelector('.rodape');
+        let ultimoScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            let scrollAtual = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollAtual > ultimoScroll && scrollAtual > 20) {
+                // Rolou para baixo -> Esconde o rodapé
+                rodape.classList.add('rodape-oculto');
+            } else {
+                // Rolou para cima -> Mostra o rodapé
+                rodape.classList.remove('rodape-oculto');
+            }
+            
+            ultimoScroll = scrollAtual;
+        });
+    </script>
+</body>
+</html>

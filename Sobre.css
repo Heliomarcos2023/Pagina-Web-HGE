@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari&display=swap');
+
+:root {
+    --cor-primaria: rgba(0, 0, 0, 0.9);
+    --cor-segudaria: #ffffff;
+    --cor-terciaria: rgb(35, 172, 165);
+    --cor-menubar: rgba(101, 221, 255, 0.9);
+}
+
+/* Aplicando o scroll no HTML para garantir que fique atrás dos elementos fixos */
+html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+/* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM GLOBAL ATRÁS DO LAYOUT --- */
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+html::-webkit-scrollbar-thumb {
+    background: transparent; /* Oculta por padrão */
+    border-radius: 2px;
+    transition: background 0.3s ease; 
+}
+
+/* Quando o mouse passa na tela, ela aparece respeitando o z-index inferior */
+html:hover::-webkit-scrollbar-thumb {
+    background: var(--cor-menubar); 
+}
+
+html:hover::-webkit-scrollbar-track {
+   background: rgba(255, 255, 255, 0.05); 
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-image: url('/assets_hge/foto_hge03.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--cor-primaria);
+}
+
+header {
+    background-color: #B6BBC4;
+}
+
+/* Cabeçalho - Z-INDEX ALTO para cobrir a barra de rolagem */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    backdrop-filter: blur(12px);
+    background: rgba(30, 40, 50, 0.55);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    z-index: 9999; /* Fica por cima do scroll */
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.menu a {
+    color: var(--cor-segudaria);
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: var(--cor-menubar);
+    transform: translateY(-2px);
+}
+
+.menu .ativo {
+    border-bottom: 3px solid var(--cor-menubar);
+}
+
+/* Área de Conteúdo */
+.sobre__hge {
+    margin: 120px auto 140px auto; /* Ajustado margens para acompanhar o layout global */
+    width: 85%;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 4% 6%;
+    border-radius: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.texto__principal {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.texto__destaque {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 30px;
+    border-bottom: 2px solid var(--cor-menubar);
+    padding-bottom: 5px;
+}
+  
+.destaque {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.destaque p {
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.destaque .texto__principal {
+    font-weight: 300;
+    text-align: center;
+}
+  
+.texto__funcionamento {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 40px;
+    background: rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.texto__inforrodape {
+    text-align: center;
+    font-size: 1.1rem;
+    list-style: none;
+    padding: 0;
+}
+
+/* Rodapé - Z-INDEX ALTO para cobrir a barra de rolagem */
+.rodape {
+    text-align: center;
+    padding: 15px 0;
+    background: rgba(30, 40, 50, 0.85);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Fica por cima do scroll */
+
+    /* Configurações de transição para ocultar */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.rodape p {
+    color: #FFFFFF;
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Classe aplicada via JavaScript ao rolar */
+.rodape-oculto {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none; 
+}
+
+/* ==========================================
+   RESPONSIVIDADE (Ecrãs até 800px)
+   ========================================== */
+@media (max-width: 800px) {
+    .menu {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .menu a {
+        font-size: 1rem;
+    }
+
+    .sobre__hge {
+        width: 92%;
+        margin-top: 120px;
+        margin-bottom: 100px;
+        padding: 20px;
+    }
+
+    .texto__principal {
+        font-size: 1.05rem;
+        text-align: left;
+    }
+
+    .texto__destaque {
+        font-size: 1.4rem;
+    }
+
+    .texto__funcionamento {
+        font-size: 1.2rem;
+    }
+}

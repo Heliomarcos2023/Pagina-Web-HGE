@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari&display=swap');
+
+:root {
+    --cor-primaria: rgba(0, 0, 0, 0.9);
+    --cor-menubar: #4FC3F7;
+    --cor-texto: #F5F7FA;
+}
+
+/* Aplicando o scroll no HTML para garantir que fique atrás dos elementos fixos */
+html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+/* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM ATRÁS DO LAYOUT --- */
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+html::-webkit-scrollbar-thumb {
+    background: transparent; /* Oculta por padrão */
+    border-radius: 2px;
+    transition: background 0.3s ease; 
+}
+
+/* Quando o mouse passa na tela, ela aparece, mas respeitando o z-index inferior */
+html:hover::-webkit-scrollbar-thumb {
+    background: var(--cor-menubar); 
+}
+
+html:hover::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05); 
+}
+
+/* Fundo */
+.fundo {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-image: url('/assets_hge/foto_hge04.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--cor-primaria);
+}
+
+/* Cabeçalho - Z-INDEX ALTO para cobrir a barra de rolagem */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    backdrop-filter: blur(12px);
+    background: rgba(30, 40, 50, 0.55);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    z-index: 9999; /* Garante que fica por cima do scroll */
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.menu a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: var(--cor-menubar);
+    transform: translateY(-2px);
+}
+
+.menu .ativo {
+    border-bottom: 3px solid var(--cor-menubar);
+}
+
+/* Título */
+.titulo {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.titulo h1 {
+    font-size: 2.5rem;
+}
+
+.titulo p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Busca */
+.busca {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#searchInput {
+    width: 40%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+    color: var(--cor-primaria);
+    transition: .3s;
+}
+
+#searchInput:focus {
+    background: rgba(255,255,255,0.3);
+    box-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+}
+
+/* Tabela e Container */
+.tabela-container {
+    width: 85%;
+    margin: 0 auto 140px auto; /* Espaço de folga para o rodapé fixo */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+}
+
+.titulo__tabela {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--cor-menubar);
+    padding-left: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    table-layout: fixed; 
+}
+
+thead th, tbody td {
+    width: 25%; 
+    padding: 12px;
+    text-align: left;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+thead th {
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
+}
+
+thead th:nth-child(odd), thead th:nth-child(even) {
+    color: var(--cor-texto);
+}
+
+/* Corpo da Tabela */
+tbody td:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.07); 
+    color: var(--cor-primaria);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+tbody td:nth-child(even) {
+    background: rgba(0, 0, 0, 0.25);
+    color: var(--cor-primaria);
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
+tbody td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Rodapé - Z-INDEX ALTO para cobrir a barra de rolagem */
+.rodape {
+    color: #FFFFFF;
+    text-align: center;
+    padding: 15px 0;
+    background: rgba(30, 40, 50, 0.85);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Garante que fica por cima do scroll */
+
+    /* Configurações para ocultar ao rolar */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* nome do rodape */
+.rodape p {
+      color: #FFFFFF;
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.9;
+}
+
+/* Ocultação dinâmica */
+.rodape-oculto {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none; 
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .menu {
+        gap: 1rem;
+        flex-wrap: wrap; 
+    }
+    
+    .menu a {
+        font-size: 1rem;
+    }
+
+    .tabela-container {
+        width: 95%;
+        padding: 15px;
+        margin-bottom: 100px;
+    }
+
+    table {
+        table-layout: auto; 
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table, table tbody, table tr, table td {
+        display: block;
+        width: 100% !important;
+        white-space: normal; 
+    }
+
+    table tr {
+        margin-bottom: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.15);
+    }
+
+    table td {
+        text-align: right;
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        position: relative;
+    }
+
+    tbody td:nth-child(odd), tbody td:nth-child(even) {
+        background: transparent;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        top: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+    }
+
+    table td:nth-child(1), table td:nth-child(3) {
+        color: var(--cor-primaria);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    table td:nth-child(1)::before, table td:nth-child(3)::before {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    table td:nth-child(2), table td:nth-child(4) {
+        color: var(--cor-menubar);
+        font-weight: bold;
+    }
+
+    table td:nth-child(2)::before, table td:nth-child(4)::before {
+        color: var(--cor-menubar);
+        opacity: 0.8;
+    }
+}

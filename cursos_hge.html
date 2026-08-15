@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - HGE</title>
+    <link rel="icon" href="assets_hge/hge.ico" type="image/x-icon">
+    <link rel="stylesheet" href="cursos.css">
+</head>
+
+<body class="fundo">
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="sistemas_hge.html">Sistemas</a>
+            <a href="Manuais.html">Manuais</a>
+            <a class="ativo" href="cursos_hge.html">Cursos</a>
+            <a href="contatos_hge.html">Contatos</a>
+            <a href="sobre_hge.html">Sobre</a>
+        </nav>
+    </header>
+
+    <!-- TÍTULO -->
+    <section class="titulo">
+        <h1>Plataformas de Cursos</h1>
+        <p>Acesse os principais portais de capacitação</p>
+    </section>
+
+    <!-- GRID DE CURSOS -->
+    <section class="grid">
+
+        <div class="card">
+            <a href="https://www.escolavirtual.gov.br/catalogo" target="_blank">
+                <img src="./assets_hge/EVG.png" alt="EVG">
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://capacitacao.al.gov.br/" target="_blank">
+                <img src="./assets_hge/sga.png" alt="SGA">
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="http://educasesauead.saude.al.gov.br" target="_blank">
+                <img src="./assets_hge/educasesau.png" alt="EducaSesau">
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://sebrae.com.br/sites/PortalSebrae/cursosonline" target="_blank">
+                <img src="./assets_hge/sebrae.png" alt="Sebrae Cursos">
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://aprendamais.mec.gov.br/" target="_blank">
+                <img src="./assets_hge/aprenda_mais.png" alt="Aprenda Mais MEC">
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="https://www.ev.org.br/" target="_blank">
+                <img src="./assets_hge/bradesco.png" alt="Fundação Bradesco">
+            </a>
+        </div>
+
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <p>Desenvolvido por CTECI / NPD</p>
+    </footer>
+
+    <script>
+        // Monitoramento do scroll global na janela para ocultar/mostrar o rodapé
+        const rodape = document.querySelector('.rodape');
+        let ultimoScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            let scrollAtual = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollAtual > ultimoScroll && scrollAtual > 20) {
+                // Rolou para baixo -> Esconde o rodapé
+                rodape.classList.add('rodape-oculto');
+            } else {
+                // Rolou para cima -> Mostra o rodapé
+                rodape.classList.remove('rodape-oculto');
+            }
+            
+            ultimoScroll = scrollAtual;
+        });
+    </script>
+</body>
+</html>
