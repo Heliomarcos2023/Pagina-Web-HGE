@@ -1,150 +1,259 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manuais e Tutoriais - HGE</title>
-    <link rel="icon" href="assets_hge/hge.ico" type="image/x-icon">
-    <link rel="stylesheet" href="manuais.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuais e Tutoriais - HGE</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets_hge/hge.ico" type="image/x-icon">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="manuais.css">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body class="fundo">
 
-    <!-- CABEÇALHO -->
-    <header class="cabecalho">
-        <nav class="menu">
-            <a href="index.html">Início</a>
-            <a href="sistemas_hge.html">Sistemas</a>
-            <a class="ativo" href="Manuais.html">Manuais</a>
-            <a href="cursos_hge.html">Cursos</a>
-            <a href="contatos_hge.html">Contatos</a>
-            <a href="sobre_hge.html">Sobre</a>
-        </nav>
-    </header>
+  <!-- CABEÇALHO -->
+  <header class="cabecalho">
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="sistemas_hge.html">Sistemas</a>
+      <a class="ativo" href="Manuais.html">Manuais</a>
+      <a href="cursos_hge.html">Cursos</a>
+      <a href="contatos_hge.html">Contatos</a>
+      <a href="sobre_hge.html">Sobre</a>
+    </nav>
+  </header>
 
-    <!-- TÍTULO -->
-    <section class="titulo">
-        <h1>Central de Ajuda</h1>
-        <p>Selecione uma categoria abaixo para acessar o conteúdo de suporte</p>
-    </section>
+  <!-- TÍTULO -->
+  <section class="titulo">
+    <h1>Central de Ajuda</h1>
+    <p>Selecione uma categoria abaixo para acessar o conteúdo de suporte</p>
+  </section>
 
-    <!-- BOTÕES DE SELEÇÃO (ABAS) -->
-    <div class="abas-container">
-        <button class="btn-aba ativa" onclick="alternarAba('manuais')">Manuais em PDF</button>
-        <button class="btn-aba" onclick="alternarAba('videos')">Vídeos Tutoriais</button>
+  <!-- BOTÕES DE SELEÇÃO (ABAS) -->
+  <div class="abas-container">
+    <button class="btn-aba ativa" onclick="alternarAba(event, 'manuais')">Manuais em PDF</button>
+    <button class="btn-aba" onclick="alternarAba(event, 'videos')">Vídeos Tutoriais</button>
+  </div>
+
+  <!-- CONTEÚDO 1: GRID DE MANUAIS EM PDF -->
+  <section id="aba-manuais" class="grid secao-aba ativa">
+    <div class="card">
+      <a href="./manuais/_EBOOK GESTHOSP WEB - MÓDULO MAQUEIROS.pdf" target="_blank">
+        <img src="./assets_hge/manual_maq.png" alt="Manual Maqueiros">
+      </a>
     </div>
 
-    <!-- CONTEÚDO 1: GRID DE MANUAIS EM PDF -->
-    <section id="aba-manuais" class="grid secao-aba ativa">
+    <div class="card">
+      <a href="./manuais/eBOOK GESTHOSP FARMÁCIA.pdf" target="_blank">
+        <img src="./assets_hge/manual_farm.png" alt="Manual Farmácia">
+      </a>
+    </div>
 
-        <div class="card">
-            <a href="./manuais/_EBOOK GESTHOSP WEB - MÓDULO MAQUEIROS.pdf" target="_blank">
-                <img src="./assets_hge/manual_maq.png" alt="Manual Maqueiros">
-            </a>
-        </div>
+    <div class="card">
+      <a href="./manuais/_EBOOK GESTHOSP 2.0 - VISITANTES E ACOMPANHANTES (RECEPÇÃO).pdf" target="_blank">
+        <img src="./assets_hge/manu_visitas.png" alt="Manual Visitantes">
+      </a>
+    </div>
 
-        <div class="card">
-            <a href="./manuais/eBOOK GESTHOSP FARMÁCIA.pdf" target="_blank">
-                <img src="./assets_hge/manual_farm.png" alt="Manual Farmácia">
-            </a>
-        </div>
+    <div class="card">
+      <a href="/manuais/MAPA DE ENFERMAGEM (VISÃO ENFERMEIRO).pdf" target="_blank">
+        <img src="./assets_hge/manu_enfer.png" alt="Manual Enfermagem">
+      </a>
+    </div>
+  </section>
 
-        <div class="card">
-            <a href="./manuais/_EBOOK GESTHOSP 2.0 - VISITANTES E ACOMPANHANTES (RECEPÇÃO).pdf" target="_blank">
-                <img src="./assets_hge/manu_visitas.png" alt="Manual Visitantes">
-            </a>
-        </div>
+  <!-- CONTEÚDO 2: VÍDEOS TUTORIAIS OCULTOS POR CATEGORIAS -->
+  <section id="aba-videos" class="secao-aba">
+    <p style="text-align: center; color: var(--cor-primaria); margin-bottom: 25px; opacity: 0.8;">
+      Clique em uma categoria para exibir os vídeos tutoriais correspondentes:
+    </p>
 
-        <div class="card">
-            <a href="/manuais/MAPA DE ENFERMAGEM (VISÃO ENFERMEIRO).pdf" target="_blank">
-                <img src="./assets_hge/manu_enfer.png" alt="Manual Enfermagem">
-            </a>
-        </div>
+    <!-- CONTAINER DOS BOTÕES LADO A LADO -->
+    <div class="container-categorias-horizontal">
 
-    </section>
-
-    <!-- CONTEÚDO 2: GRID DE VÍDEOS TUTORIAIS -->
-    <section id="aba-videos" class="grid secao-aba">
-
-        <!-- Exemplo de Card de Vídeo -->
-        <div class="card">
+      <!-- Categoria 1: Mapa -->
+      <div class="categoria-accordion">
+        <button class="btn-categoria" onclick="toggleCategoria('cat-Mapa', event)">
+          <span>Mapa Enfermagem</span>
+          <span class="seta">▼</span>
+        </button>
+        <div id="cat-Mapa" class="grid grid-categoria-conteudo">
+          <div class="card">
             <a href="/manuais/incluir_pacientes.mp4" target="_blank">
-                <img src="./assets_hge/incluir.png" alt="Tutorial Maqueiros em Vídeo">
+              <img src="./assets_hge/incluir.png" alt="Tutorial Maqueiros em Vídeo">
             </a>
-        </div>
-
-        <!-- Outro exemplo de Card de Vídeo -->
-        <div class="card">
+          </div>
+          <div class="card">
             <a href="/manuais/especialidade.mp4" target="_blank">
-                <img src="./assets_hge/especialidade.png" alt="Tutorial Farmácia em Vídeo">
+              <img src="./assets_hge/especialidade.png" alt="Tutorial Farmácia em Vídeo">
             </a>
-        </div>
-
-            <!-- Outro exemplo de Card de Vídeo -->
-        <div class="card">
-            <a href="/manuais/finalizar mapa.mp4" target="_blank">
-                <img src="./assets_hge/finalização.png" alt="Tutorial Farmácia em Vídeo">
-            </a>
-        </div>
-
-         <!-- Exemplo de Card de Vídeo -->
-        <div class="card">
+          </div>
+          <div class="card">
             <a href="/manuais/MAPA DE ENFERMAGEM - COMO SOLICITAR LEITO AO NIR.mp4" target="_blank">
-                <img src="./assets_hge/solicitar regulação.png" alt="Tutorial Maqueiros em Vídeo">
+              <img src="./assets_hge/solicitar regulação.png" alt="Tutorial Enfermagem em Vídeo">
             </a>
-        </div>
-
-         <!-- Outro exemplo de Card de Vídeo -->
-        <div class="card">
+          </div>
+          <div class="card">
             <a href="/manuais/MAPA DE ENFERMAGEM - ACEITAR SOLICITAÇÃO.mp4" target="_blank">
-                <img src="./assets_hge/aceita_nir.png" alt="Tutorial Farmácia em Vídeo">
+              <img src="./assets_hge/aceita_nir.png" alt="Tutorial Enfermagem em Vídeo">
             </a>
+          </div>
+          <div class="card">
+            <a href="/manuais/finalizar mapa.mp4" target="_blank">
+              <img src="./assets_hge/finalização.png" alt="Tutorial Farmácia em Vídeo">
+            </a>
+          </div>
         </div>
+      </div>
 
-    </section>
+      <!-- Categoria 2: Fluxo -->
+      <div class="categoria-accordion">
+        <button class="btn-categoria" onclick="toggleCategoria('cat-fluxo', event)">
+          <span>Fluxo de Óbito</span>
+          <span class="seta">▼</span>
+        </button>
+        <div id="cat-fluxo" class="grid grid-categoria-conteudo">
+          <div class="card">
+            <a href="https://www.youtube.com/watch?v=mdbwPEfgE0A" target="_blank">
+              <img src="./assets_hge/FLUXO_OB.png" alt="Tutorial Farmácia em Vídeo">
+            </a>
+          </div>
+            <div class="card">
+            <a href="https://www.youtube.com/watch?v=p3YEZW4vUMQ" target="_blank">
+              <img src="./assets_hge/fluxo_super.png" alt="Tutorial Farmácia em Vídeo">
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://www.youtube.com/watch?v=pFaHHmZa6m4" target="_blank">
+              <img src="./assets_hge/fluxo_per.png" alt="Tutorial Farmácia em Vídeo">
+            </a>
+          </div>
+        </div>
+      </div>
 
-    <!-- RODAPÉ -->
-    <footer class="rodape">
-        <p>Desenvolvido por CTECI / NPD</p>
-    </footer>
+      <!-- Categoria 3: Pertences -->
+      <div class="categoria-accordion">
+        <button class="btn-categoria" onclick="toggleCategoria('cat-pertences', event)">
+          <span>Pertences</span>
+          <span class="seta">▼</span>
+        </button>
+        <div id="cat-pertences" class="grid grid-categoria-conteudo">
+            <div class="card">
+            <a href="https://www.youtube.com/watch?v=Gyyp6GjFQ5Q" target="_blank">
+              <img src="./assets_hge/pertences.png" alt="Tutorial pertences">
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p>Desenvolvido por CTECI / NPD</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="manuais.js"></script>
+</body>
+</html>
 
     <!-- JAVASCRIPT ATUALIZADO PARA ALTERNAR AS ABAS E MONITORAR O SCROLL GLOBAL -->
     <script>
-        function alternarAba(abaNome) {
-            // Remove a classe ativa de todos os botões
-            document.querySelectorAll('.btn-aba').forEach(btn => {
-                btn.classList.remove('ativa');
-            });
-            
-            // Remove a classe ativa de todas as seções (grids)
-            document.querySelectorAll('.secao-aba').forEach(secao => {
-                secao.classList.remove('ativa');
-            });
+  /**
+ * Alterna a visualização entre as abas principais (Manuais / Vídeos).
+ * @param {Event} event - Evento do clique
+ * @param {string} abaNome - Nome da aba a ser ativada ('manuais' ou 'videos')
+ */
+function alternarAba(event, abaNome) {
+  // Remove a classe ativa de todos os botões de aba
+  document.querySelectorAll('.btn-aba').forEach((btn) => {
+    btn.classList.remove('ativa');
+  });
 
-            // Adiciona a classe ativa ao botão clicado
-            event.currentTarget.classList.add('ativa');
+  // Remove a classe ativa de todas as seções
+  document.querySelectorAll('.secao-aba').forEach((secao) => {
+    secao.classList.remove('ativa');
+  });
 
-            // Mostra a seção correspondente
-            document.getElementById('aba-' + abaNome).classList.add('ativa');
-        }
+  // Adiciona a classe ativa ao botão clicado
+  event.currentTarget.classList.add('ativa');
 
-        // Monitoramento da rolagem global do navegador para ocultar/exibir o rodapé
-        const rodape = document.querySelector('.rodape');
-        let ultimoScroll = 0;
+  // Exibe a seção correspondente
+  const secaoAlvo = document.getElementById(`aba-${abaNome}`);
+  if (secaoAlvo) {
+    secaoAlvo.classList.add('ativa');
+  }
+}
 
-        window.addEventListener('scroll', () => {
-            let scrollAtual = window.scrollY || document.documentElement.scrollTop;
+/**
+ * Expande/oculta o conteúdo de uma categoria de tutoriais em vídeo.
+ * @param {string} idCategoria - ID do elemento container do conteúdo
+ * @param {Event} event - Evento do clique
+ */
+function toggleCategoria(idCategoria, event) {
+  const conteudo = document.getElementById(idCategoria);
+  const botao = event.target.closest('.btn-categoria');
+  const containerGeral = document.querySelector('.container-categorias-horizontal');
 
-            if (scrollAtual > ultimoScroll && scrollAtual > 20) {
-                // Rolou para baixo -> Esconde o rodapé
-                rodape.classList.add('rodape-oculto');
-            } else {
-                // Rolou para cima -> Mostra o rodapé
-                rodape.classList.remove('rodape-oculto');
-            }
-            
-            ultimoScroll = scrollAtual;
-        });
+  if (!conteudo || !botao || !containerGeral) return;
+
+  const jaEstavaAtivo = conteudo.classList.contains('ativa');
+
+  // Oculta todas as categorias ativas previamente
+  document.querySelectorAll('.grid-categoria-conteudo').forEach((el) => {
+    el.classList.remove('ativa');
+  });
+  document.querySelectorAll('.btn-categoria').forEach((el) => {
+    el.classList.remove('ativa');
+  });
+  containerGeral.classList.remove('modo-selecionado');
+
+  // Se não estava ativo, ativa a categoria selecionada
+  if (!jaEstavaAtivo) {
+    conteudo.classList.add('ativa');
+    botao.classList.add('ativa');
+    containerGeral.classList.add('modo-selecionado');
+  }
+}
+
+/**
+ * Oculta/exibe o rodapé com base no scroll da página.
+ */
+function inicializarScrollRodape() {
+  const rodape = document.querySelector('.rodape');
+  if (!rodape) return;
+
+  let ultimoScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const scrollAtual = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollAtual > ultimoScroll && scrollAtual > 20) {
+      // Esconde o rodapé ao rolar para baixo
+      rodape.classList.add('rodape-oculto');
+    } else {
+      // Mostra o rodapé ao rolar para cima
+      rodape.classList.remove('rodape-oculto');
+    }
+
+    ultimoScroll = scrollAtual;
+  });
+}
+
+// Inicializar comportamentos após o carregamento da DOM
+document.addEventListener('DOMContentLoaded', () => {
+  inicializarScrollRodape();
+});
     </script>
 </body>
 </html>
