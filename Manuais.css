@@ -256,6 +256,7 @@ html:hover::-webkit-scrollbar-track {
   color: #1E2832;
   font-weight: bold;
   border-color: var(--cor-menubar);
+  margin-left: 40px;
 }
 
 .btn-categoria .seta {
@@ -369,7 +370,9 @@ html:hover::-webkit-scrollbar-track {
         border-radius: 6px;
         padding: 15px 10px;
     }
-    .container-categorias-horizontal .categoria-accordion #cat-Mapa{
+    .container-categorias-horizontal .categoria-accordion #cat-Mapa,
+    .container-categorias-horizontal .categoria-accordion #cat-fluxo,
+    .container-categorias-horizontal .categoria-accordion #cat-pertences{
       display: grid;
       grid-template-columns: 40% 40%;
     }
