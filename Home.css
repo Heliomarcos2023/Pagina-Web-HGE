@@ -219,7 +219,7 @@ html:hover::-webkit-scrollbar-track {
     } */
 
 
-    .slideshow-container {
+    .slideshow-container { 
         width: 90%;
         height: 45vh;
         top: 52%;

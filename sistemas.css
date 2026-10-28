@@ -176,7 +176,7 @@ html:hover::-webkit-scrollbar-track {
 @media (max-width: 800px) {
     .menu {
         gap: 1rem;
-        flex-wrap: wrap;
+        flex-wrap: wrap; 
     }
     
     .menu a {

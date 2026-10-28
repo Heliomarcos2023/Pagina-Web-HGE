@@ -177,7 +177,7 @@ thead th:nth-child(odd), thead th:nth-child(even) {
     color: var(--cor-texto);
 }
 
-/* Corpo da Tabela */
+/* Corpo da Tabela */ 
 tbody td:nth-child(odd) {
     background: rgba(255, 255, 255, 0.07); 
     color: var(--cor-primaria);

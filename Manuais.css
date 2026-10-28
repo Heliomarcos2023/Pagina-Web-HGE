@@ -366,5 +366,5 @@ html:hover::-webkit-scrollbar-track {
     }
     .container-categorias-horizontal{
       overflow-x: scroll;
-    }
+    } 
 }
