@@ -196,7 +196,7 @@ html:hover::-webkit-scrollbar-track {
     .slideshow-container {
         width: 75%;
         height: 55vh;
-    }
+    } 
 }
 
 @media(max-width: 800px) {

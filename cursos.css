@@ -72,7 +72,7 @@ html:hover::-webkit-scrollbar-track {
     text-decoration: none;
     font-size: 1.3rem;
     transition: .3s;
-}
+} 
 
 .menu a:hover {
     color: var(--cor-menubar);
