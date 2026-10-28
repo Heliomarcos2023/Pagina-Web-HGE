@@ -89,6 +89,7 @@ html:hover::-webkit-scrollbar-track {
 .titulo {
     text-align: center;
     margin-top: 120px; /* Ajustado para dar o mesmo espaçamento de contatos */
+    font-family: 'Poppins', sans-serif;
 }
 
 .titulo h1 {
@@ -167,4 +168,32 @@ html:hover::-webkit-scrollbar-track {
     transform: translateY(100%);
     opacity: 0;
     pointer-events: none; 
+}
+
+/* ==========================================
+   RESPONSIVIDADE (Ecrãs até 800px)
+   ========================================== */
+@media (max-width: 800px) {
+    .menu {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .menu a {
+        font-size: 1rem;
+    }
+
+    .titulo{
+        display: flex;
+        justify-content: center;
+    }
+
+    .titulo h1 {
+        font-size: 1.2rem;
+        background-color: #cacaca;
+        width: 90%;
+        border-radius: 6px;
+        color: #232323;
+        padding: 10px 5px;
+    }
 }

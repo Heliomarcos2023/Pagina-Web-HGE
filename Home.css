@@ -200,7 +200,7 @@ html:hover::-webkit-scrollbar-track {
 }
 
 @media(max-width: 800px) {
-    .cabecalho__menu {
+    /* .cabecalho__menu {
         margin: auto;
         justify-content: center;
         font-size: 0.9rem;
@@ -216,7 +216,7 @@ html:hover::-webkit-scrollbar-track {
     }
     .cabecalho__menu__link1, .cabecalho__menu__link2, .cabecalho__menu__link3, .cabecalho__menu__link4 {
         font-size: 1.2rem;
-    }
+    } */
 
 
     .slideshow-container {
@@ -225,5 +225,14 @@ html:hover::-webkit-scrollbar-track {
         top: 52%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .menu {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .menu a {
+        font-size: 1rem;
     }
 }

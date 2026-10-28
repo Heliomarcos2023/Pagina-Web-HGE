@@ -91,11 +91,13 @@ html:hover::-webkit-scrollbar-track {
 
 .titulo h1 {
     font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .titulo p {
     font-size: 1.2rem;
     opacity: 0.8;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Grid */
@@ -160,4 +162,26 @@ html:hover::-webkit-scrollbar-track {
     transform: translateY(100%);
     opacity: 0;
     pointer-events: none; 
+}
+
+/* ==========================================
+   RESPONSIVIDADE (Ecrãs até 800px)
+   ========================================== */
+@media (max-width: 800px) {
+    .menu {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .menu a {
+        font-size: 1rem;
+    }
+
+    .titulo h1 {
+        font-size: 1.8rem;
+    }
+    .titulo p {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
 }
